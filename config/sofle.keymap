@@ -7,6 +7,20 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h>
+
+/ {
+ behaviors {
+  /omit-if-no-ref/ mmv: behavior_mouse_move {
+   compatible = "zmk,behavior-mouse-move";
+   label = "MOUSE_MOVE";
+   #binding-cells = <1>;
+   delay-ms = <0>;
+   time-to-max-speed-ms = <2000>;
+   acceleration-exponent = <1000>; 
+  };
+ };
+};
 
 / {
     keymap {
@@ -69,11 +83,13 @@
         
         mouse_layer {
             bindings = <
-    &mkp MB3 &mkp MB1 &mmv MOVE_UP &mkp MB2  &mwh SCROLL_UP &none &none &none &none &none
-    &kp A &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mwh SCROLL_DOWN &none &none &none &none &none
-    &mkp MB4 &mkp MB5 &mwh SCROLL_LEFT &mwh SCROLL_RIGHT &none &none &none &none &none &none
-                           &none &none &none &none &none &none 
+&trans     &trans       &trans          &trans          &trans          &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans       &mkp MB1        &mmv MOVE_UP    &mkp MB2        &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans       &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans       &trans          &trans          &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans          &trans          &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
