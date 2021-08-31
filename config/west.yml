@@ -2,11 +2,11 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: okke-formsma
-      url-base: https://github.com/okke-formsma
+    - name: w84miracle
+      url-base: https://github.com/w84miracle
   projects:
     - name: zmk
-      remote: okke-formsma
+      remote: w84miracle
       revision: mousekeys
       import: app/west.yml
   self:
