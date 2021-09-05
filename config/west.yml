@@ -9,7 +9,7 @@ manifest:
   projects:
     - name: zmk
       remote: krikun98
-      revision: 5430fb009f81787c4afaa0829e302cbadae2a86a
+      revision: 9da081c8af5717c8d968443b735301923ac4c7a8
       import: app/west.yml
   self:
     path: config
