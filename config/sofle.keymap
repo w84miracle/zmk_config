@@ -83,7 +83,7 @@
                 &tog 3      &trans      &trans       &mkp LCLK       &mkp RCLK &trans  &trans    &trans    &trans   &trans
             >;
 
-            sensor-bindings = <&mwh SCROLL_UP SCROLL_DOWN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp SCROLL_UP SCROLL_DOWN &inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
